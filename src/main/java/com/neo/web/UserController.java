@@ -1,12 +1,10 @@
 package com.neo.web;
 
-import com.neo.entity.User;
+import com.neo.entity.Users;
 import com.neo.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,7 +23,7 @@ public class UserController {
 
     @RequestMapping("/list")
     public String list(Model model) {
-        List<User> users=userService.getUserList();
+        List<Users> users=userService.getUserList();
         model.addAttribute("users", users);
         return "user/list";
     }
@@ -36,20 +34,20 @@ public class UserController {
     }
 
     @RequestMapping("/add")
-    public String add(User user) {
+    public String add(Users user) {
         userService.save(user);
         return "redirect:/list";
     }
 
     @RequestMapping("/toEdit")
     public String toEdit(Model model,Long id) {
-        User user=userService.findUserById(id);
+        Users user=userService.findUserById(id);
         model.addAttribute("user", user);
         return "user/userEdit";
     }
 
     @RequestMapping("/edit")
-    public String edit(User user) {
+    public String edit(Users user) {
         userService.edit(user);
         return "redirect:/list";
     }

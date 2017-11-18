@@ -43,6 +43,15 @@
             <version>1.9.22</version>
         </dependency>
 
+
+            <!-- 添加oracle jdbc driver -->
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.1.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

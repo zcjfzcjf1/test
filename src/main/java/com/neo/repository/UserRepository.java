@@ -1,11 +1,11 @@
 package com.neo.repository;
 
-import com.neo.entity.User;
+import com.neo.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<Users, Long> {
 
-    User findById(long id);
+    Users findById(long id);
 
     Long deleteById(Long id);
 }
